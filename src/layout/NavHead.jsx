@@ -12,16 +12,16 @@ import { NavLink } from 'react-router-dom';
 const NavHead = () => {
     return (
 <Navbar  bg="dark" variant="dark" expand="lg">
-  <Navbar.Brand  href="#home"><FontAwesomeIcon icon={faGlasses} />  </Navbar.Brand>
+  <Navbar.Brand  ><FontAwesomeIcon icon={faGlasses} />  </Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <NavLink exact to="/" >Магазин</NavLink>
     
     </Nav>
-    <Nav inline>
-    <NavLink to="/cart" className="color"  >
-    <FontAwesomeIcon icon={faShoppingCart} />{' '}Кошик
+    <Nav>
+    <NavLink to="/cart">
+    <FontAwesomeIcon icon={faShoppingCart} />{' '} Кошик
     </NavLink>
       
     </Nav>

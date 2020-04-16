@@ -1,19 +1,21 @@
 import React from 'react';
 import CartForm from './cartForm/CartForm';
 import { connect } from 'react-redux';
+import { addCart} from '../../Store/actions/cart';
 
 
 
 
 
 
-const Cart = ({products, totalCount, totalPrice}) => {
+const Cart = ({products, totalCount, totalPrice, addCart}) => {
 
   
  const renderCart = (element) =>  ( 
  <CartForm
  el={element} 
- id={element.id}
+ key={element.id}
+ addCart={() => addCart(element)}
  
  
  />)
@@ -69,4 +71,4 @@ const mapStateProps = state => ({
     
   });
 
-export default connect(mapStateProps)(Cart);
+export default connect(mapStateProps, {addCart})(Cart);

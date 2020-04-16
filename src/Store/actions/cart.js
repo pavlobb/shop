@@ -1,4 +1,4 @@
-import { PUT_CART } from "./types";
+import { PUT_CART, ADD_CART } from "./types";
 
 
 
@@ -14,6 +14,13 @@ dispatch({
     
 }
 
+export const addCart = (item) =>  dispatch =>{
+      dispatch({
+          type: ADD_CART,
+          payload: item
+
+      })
+ }
 
 
     

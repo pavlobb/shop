@@ -18,7 +18,7 @@ const CartForm = ({el, addCart}) => {
                     -
                                 </button >
 
-                    <button  type="primary">
+                    <button onClick={addCart}  type="primary">
                         +
                                     </button></th>
                 <th>{`${el.price} грн `}</th>
