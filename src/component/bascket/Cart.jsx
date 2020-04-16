@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import CartForm from './cartForm/CartForm';
 import { connect } from 'react-redux';
 
@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 const Cart = ({products}) => {
 
-   
+  
  const renderCart = (element) =>  ( 
  <CartForm
  el={element} 
@@ -60,7 +60,7 @@ const Cart = ({products}) => {
 }
 
 const mapStateProps = state => ({
-    products: state.cart
+    products: state.cart.putCartItems
     
   });
 
