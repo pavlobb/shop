@@ -6,7 +6,8 @@ import { connect } from 'react-redux';
 
 
 
-const Cart = ({products}) => {
+
+const Cart = ({products, totalCount, totalPrice}) => {
 
   
  const renderCart = (element) =>  ( 
@@ -14,11 +15,10 @@ const Cart = ({products}) => {
  el={element} 
  id={element.id}
  
+ 
  />)
  
- const sum = products.reduce((sum, count) => sum + count.count, 0);
- const sumPrice = products.reduce((sum, count) => sum + count.price * count.count, 0);
-    
+ 
     return (
   
        <div className="container">
@@ -28,9 +28,11 @@ const Cart = ({products}) => {
                 <tr>
                     <th></th>
                     <th >Назва товару</th>
-                    <th ></th>
-                    <th >Кількість</th>
+                    <th></th>
                     <th >Ціна</th>
+                    <th >Кількість</th>
+                    <th >Сума</th>
+                   
                 </tr>
             </thead>
             <tbody >
@@ -41,9 +43,10 @@ const Cart = ({products}) => {
        <tr>
                     <th></th>
                     <th >Загальна сума</th>
-                    <th ></th>
-                    <th >{sum}</th>
-                    <th >{sumPrice}</th>
+                    <th></th>
+                    <th></th>
+                    <th >{`${totalCount} шт`}</th>
+                    <th >{`${totalPrice} грн`} </th>
                 </tr>
             </tbody>
         </table>
@@ -60,7 +63,9 @@ const Cart = ({products}) => {
 }
 
 const mapStateProps = state => ({
-    products: state.cart.putCartItems
+    products: state.cart.putCartItems,
+    totalCount: state.cart.totalCount,
+    totalPrice: state.cart.totalPrice
     
   });
 

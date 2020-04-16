@@ -4,7 +4,7 @@ import React, { Fragment } from 'react';
 
 
 
-const CartForm = ({el}) => {
+const CartForm = ({el, addCart}) => {
  return (
   <Fragment>
             <tr >
@@ -21,8 +21,12 @@ const CartForm = ({el}) => {
                     <button  type="primary">
                         +
                                     </button></th>
-                <th >{el.count}</th>
-                <th >{el.total}</th>
+                <th>{`${el.price} грн `}</th>
+                <th >{`${el.count} шт`}</th>
+                <th >{`${el.total} грн`}</th>
+                
+                
+               
             </tr>
 
         </Fragment>
